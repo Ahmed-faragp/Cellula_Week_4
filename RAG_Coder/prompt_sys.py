@@ -39,20 +39,7 @@ explanation_template = ChatPromptTemplate.from_messages([
     "Context: {context}"
     )
 ])
-learning_template = ChatPromptTemplate.from_messages([
-    ("system", """ 
-    You are an AI coding assistant that is LEARNING from the user. You will be given code snippets and explanations by the user and you will learn from them to answer future questions. 
 
-    General Rules:
-    - Do not answer questions in learning mode, just learn from the information provided by the user
-    - When the user provides information, acknowledge that you have learned it and can use it to answer future questions
-    - If the user asks a question while in learning mode, say "I am currently learning. Please provide me with information to learn about this topic."
-        """),
-    
-    ("user",
-    "Information: {information}"
-    )
-])
 
 def generate_prompt(mode, question, context, memory):
     if mode == "explanation":
