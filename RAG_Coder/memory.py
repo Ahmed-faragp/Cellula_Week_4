@@ -58,10 +58,3 @@ def get_memory_messages():
         for m in conversation.memory.chat_memory.messages
     ]
 
-print("Before conversation:")
-print(memory.buffer)
-
-conversation.predict(input="Hello")
-
-print("\nAfter conversation:")
-print(memory.buffer)
