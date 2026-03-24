@@ -44,8 +44,6 @@ explanation_template = ChatPromptTemplate.from_messages([
 def generate_prompt(mode, question, context, memory):
     if mode == "explanation":
         msgs = explanation_template.format_messages(question=question, context=context, memory=memory)
-    elif mode == "learning":
-        msgs = learning_template.format_messages(information=question, memory=memory)
     else:
         msgs = coding_template.format_messages(question=question, context=context, memory=memory)
 
